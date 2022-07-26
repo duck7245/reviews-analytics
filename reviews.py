@@ -14,3 +14,11 @@ for d in data:
 	sum_len += len(d) # sum_len = sum_len + Len(d)
 
 print('留言的平均長度為', sum_len/len(data))
+
+new = []
+for d in data:
+	if len(d) < 100:
+		new.append(d)
+print('留言長度小於100的一共有', len(new), '筆')
+print(new[0])
+print(new[1])
