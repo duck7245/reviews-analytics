@@ -49,3 +49,40 @@ print(bad)
 # 	bad.append('bad' in d)
 # print(bad)
 
+
+
+
+
+# 文字計數
+wc = {}
+for d in data:
+	words = d.split(' ') # split() 的預設值是空白鍵，但不會切出空白字元
+	for word in words:
+		if word in wc: # if word not in wc
+			wc[word] += 1
+		else:
+			wc[word] = 1 # 新增key進wc字典
+
+count = 1
+for word in wc:
+	if wc[word] > 1000000:
+		print(count, word, ':', wc[word])
+		count += 1
+
+while True:
+	word = input('請問你想找什麼字?')
+	if word == 'q':
+		break
+	if word in wc:
+		print(word, '出現過的次數為', wc[word],'次')
+	else:
+		print('這個字沒有出現過喔!')
+
+print('感謝使用本查詢功能')
+
+
+print(wc['Neo'])
+
+# print(len(wc))
+# print(wc)
+# print(wc['they'])
